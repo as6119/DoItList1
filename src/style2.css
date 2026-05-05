@@ -1,0 +1,88 @@
+/* 전체 배경 및 폰트 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #f5f7fa 0%,
+    #c3cfe2 100%
+  ); /* 부드러운 그라데이션 */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* 메인 컨테이너 */
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.9); /* 살짝 투명한 화이트 */
+  backdrop-filter: blur(10px); /* 뒤 배경 흐림 효과 */
+  margin: 40px 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 은은한 그림자 */
+}
+
+/* 입력창 스타일 */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease; /* 부드러운 변화 */
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* 버튼 공통 Hover 효과 */
+button {
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translateY(-2px); /* 살짝 위로 뜨는 효과 */
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 할 일 카드 디자인 */
+.todo-card {
+  background: white;
+  border: none !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.todo-card.completed {
+  background-color: #f8f9fa;
+  opacity: 0.7;
+}
+
+/* 반응형 미디어 쿼리 (Mobile Friendly) */
+@media (max-width: 480px) {
+  .app-container {
+    margin: 0;
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}

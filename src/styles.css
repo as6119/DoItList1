@@ -1,0 +1,139 @@
+/* 기본 초기화 */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.App {
+  font-family: "Pretendard", -apple-system, sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 세련된 보라색 그라데이션 배경 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transition: all 0.5s ease;
+}
+
+/* 메인 이모지 스타일 */
+.main-emoji {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+/* 제목 애니메이션 */
+.App h1 {
+  font-size: 4rem;
+  margin: 0;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.App h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 20px 0 40px 0;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* 시작하기 버튼 */
+.start-btn {
+  padding: 18px 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #764ba2;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 돌아가기 버튼 */
+.back-btn {
+  position: fixed; /* absolute 대신 fixed를 쓰면 스크롤을 내려도 고정됩니다 */
+  top: 20px;
+  left: 20px;
+  z-index: 999; /* 다른 요소보다 무조건 위에 보이게 함 */
+  color: white; /* 배경이 어두우면 흰색, 밝으면 검은색으로 조정 */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* 버튼이 잘 보이도록 반투명 배경 추가 */
+  border: 1px solid white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* --- 반응형 미디어 쿼리 --- */
+@media (max-width: 600px) {
+  .App h1 {
+    font-size: 2.5rem; /* 모바일에서 제목 크기 축소 */
+  }
+
+  .App h2 {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .start-btn {
+    width: 80%;
+    padding: 15px;
+  }
+}
